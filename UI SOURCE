@@ -184,7 +184,7 @@ function Utility.CreateDrag(Frame, Parent, Settings)
             Services.UserInputService.InputChanged:Connect(function(Input)
                 if DragPro.Dragging == true and Input == DragInfo.DragInput then
                     local PositionChange = Input.Position - DragInfo.MousePosition
-                    Utility.Tween(DragInfo.Parent, TweenInfo.new(DragPro.Settings.TweenDuration, DragPro.Settings.TweenStyle), {Position = UDim2.new(DragInfo.FramePosition.X.Scale, DragInfo.FramePosition.X.Offset + PositionChange.X, DragInfo.FramePosition.Y.Scale, DragInfo.FramePosition.Y.Offset + PositionChange.Y)}):Play()
+                    Utility.Tween(DragInfo.Parent, TweenInfo.new(DragPro.Settings.TweenDuration, DragPro.Settings.TweenStyle), {Position = UDim2.new(DragInfo.FramePosition.X.Scale, PositionChange.X, DragInfo.FramePosition.Y.Scale, PositionChange.Y)}):Play()
                 end
             end)
         )
